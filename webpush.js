@@ -12,6 +12,7 @@ function sendWebPushNotification(payload) {
     var count = payload.params.count;
     var title = payload.params.title;
     var body = payload.params.body;
+    var icon = payload.params.icon;
     console.log("count: " + count);
     console.log("title: " + title);
     console.log("body: " + body);
