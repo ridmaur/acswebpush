@@ -1,0 +1,18 @@
+{
+  "name": "acswebpush",
+  "version": "1.0.0",
+  "description": "Example of sending web push notifications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rob In der Maur",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^8.3.0",
+    "fs": "0.0.1-security",
+    "request": "^2.88.0",
+    "serverless-openapi-documentation": "^0.4.0",
+    "serverless-openwhisk": "^0.18.4"
+  }
+}
