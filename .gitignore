@@ -1,0 +1,11 @@
+# package directories
+node_modules/
+
+# serverless directories
+.serverless/
+
+# the authentication file
+web-push-from-acs-firebase.json
+
+
+
