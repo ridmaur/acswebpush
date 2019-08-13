@@ -9,19 +9,20 @@ admin.initializeApp({
 
 
 function sendWebPushNotification(payload) {
+
+    // variables
     var count = payload.params.count;
     var title = payload.params.title;
     var body = payload.params.body;
-    var icon = payload.params.icon;
-    console.log("count: " + count);
-    console.log("title: " + title);
-    console.log("body: " + body);
-
     var tokens = [];
+
+    // set up device tokens
     for (var i=0; i < count; i++) {
         console.log("Token: " + payload.data[i].deviceToken);
         tokens.push(payload.data[i].deviceToken);
     }
+
+    // set up message
     var message = {
         tokens: tokens,
 
@@ -31,13 +32,16 @@ function sendWebPushNotification(payload) {
         }
     };
 
+    // set up ACS specific response
     var acsResponse = {
         data: []
     };
-
+ 
+    // set up web push notification
     var messageString = JSON.stringify(message);
     console.log("The web push notification message we're about to send:\n" + messageString);
 
+    // invoke web push notification to device tokens
     return new Promise (function (resolve, reject) {
         admin.messaging().sendMulticast(message)
             .then((response) => {
